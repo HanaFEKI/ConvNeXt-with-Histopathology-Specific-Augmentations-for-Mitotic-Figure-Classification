@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import timm
 
-class ConvNextV2Classifier(nn.Module):
+class ConvNextClassifier(nn.Module):
     def __init__(self, model_name: str = "convnext_base",
                  weights: str = "DEFAULT",
                  num_classes: int = 1):
