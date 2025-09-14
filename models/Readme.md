@@ -18,9 +18,9 @@ ConvNeXt processes it in four main stages:
    - Output shape = `(N, 96, 56, 56)`  
 
    *Formula*:  
-   \[
+  ```math
    H_{out} = \left\lfloor \frac{H - K}{S} \right\rfloor + 1
-   \]
+   ```
    For `H = 224, K = 4, S = 4` → `56`.
 
 3. **Stage Stack (×4)**:  
@@ -73,27 +73,27 @@ Suppose input to **Stage 2 block** is `(N, 192, 28, 28)`.
    - Output shape = `(N, 192, 28, 28)`
 
    *Operation per channel \(c\)*:  
-   \[
+   ```math
    y_c(i,j) = \sum_{u=-3}^{3}\sum_{v=-3}^{3} W_c(u,v) \cdot x_c(i+u, j+v)
-   \]
+   ```
 
 2. **LayerNorm (channel-wise)**  
    - Normalize each channel across `(H, W)` spatial positions.  
    - Keeps shape `(N, 28, 28, 192)` in NHWC format.
 
    *Formula*:  
-   \[
+   ```math
    \hat{x}_{c} = \frac{x_c - \mu_c}{\sqrt{\sigma_c^2 + \epsilon}}
-   \]
+   ```
 
 3. **Linear Expansion (C → 4C)**  
    - `(192 → 768)`  
    - Shape = `(N, 28, 28, 768)`
 
 4. **GELU Activation**  
-   \[
+   ```math
    \text{GELU}(x) = 0.5x \left( 1 + \tanh\!\left(\sqrt{\tfrac{2}{\pi}} (x + 0.044715x^3)\right)\right)
-   \]
+   ```
 
 5. **Linear Projection (4C → C)**  
    - `(768 → 192)`  
