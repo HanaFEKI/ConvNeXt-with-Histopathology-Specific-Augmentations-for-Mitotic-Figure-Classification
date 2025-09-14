@@ -1,6 +1,6 @@
 # ConvNeXt with Histopathology-Specific Augmentations for Mitotic Figure Classification
 
-This repository contains the official code used in our solution to **Track 2 of the MIDOG 2025 Challenge**, where the task is to distinguish **atypical mitotic figures (AMFs)** from **normal mitotic figures (NMFs)** in histopathology images.
+This repository contains the official code used in our solution to **Track 2 of the [MIDOG 2025 Challenge](https://midog2025.grand-challenge.org/)**, where the task is to distinguish **atypical mitotic figures (AMFs)** from **normal mitotic figures (NMFs)** in histopathology images.
 
 🔗 This repository accompanies our preprint:  
 [**ConvNeXt with Histopathology-Specific Augmentations for Mitotic Figure Classification**](https://arxiv.org/abs/2509.02595)  
