@@ -21,13 +21,13 @@ train_images, val_images, train_labels, val_labels = train_test_split(
 
 # Training config
 trainer = MitosisTrainer(
-    model_name='convnextv2_base.fcmae_ft_in22k_in1k',
+    model_name='convnext_base',
     weights='IMAGENET1K_V1',
     num_epochs=20,
     batch_size=128,
     num_folds=5,
     lr=1e-4,
-    experiment_dir='results_convnextv2'
+    experiment_dir='results_convnext'
 )
 
 # Train
