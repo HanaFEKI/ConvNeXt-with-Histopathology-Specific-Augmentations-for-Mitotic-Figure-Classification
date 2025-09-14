@@ -31,6 +31,7 @@ This repository contains the official code used in our solution to **Track 2 of 
 │ └── dataset.py
 ├── models/ # Model definitions
 │ └── convnextv2.py
+│ └── convnext.py
 ├── utils/ # Custom augmentations & helper functions
 │ └── augmentations.py
 ├── trainer.py # Training loop logic
