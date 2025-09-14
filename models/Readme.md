@@ -14,9 +14,40 @@ ConvNeXt keeps the efficiency and inductive biases of CNNs, while borrowing desi
    - Typical channel sizes: `[96, 192, 384, 768]`  
 4. **Head**: Global average pooling → Linear classifier → Predictions  
 
----
 
 ## 🧩 Inside a ConvNeXt Block
 
 Each block follows a simple but powerful design:
+```
+Input (N, C, H, W)
+├─ Depthwise Conv (7×7) → spatial mixing
+├─ LayerNorm
+├─ Linear (C → 4C) + GELU + Linear (4C → C) → channel mixing
+├─ LayerScale (tiny learnable γ)
+├─ Residual connection (+ DropPath)
+Output (N, C, H, W)
+```
+
+
+✅ **Depthwise conv** = captures spatial context with large receptive field  
+✅ **MLP (1×1 linear layers)** = mixes channel information efficiently  
+✅ **LayerNorm & GELU** = borrowed from Transformers for better training  
+✅ **Residual + DropPath** = stabilizes deep training  
+
+---
+
+## 📊 Why ConvNeXt?
+
+- Matches or outperforms Vision Transformers while staying purely convolutional  
+- Scales efficiently across different model sizes (Tiny → Large)  
+- Simple, unified design that combines the best of CNNs and Transformers  
+
+---
+
+## 📖 Reference
+
+ConvNeXt was introduced in:  
+> **A ConvNet for the 2020s**  
+> Zhuang Liu, Hanzi Mao, Chao-Yuan Wu, Christoph Feichtenhofer, Trevor Darrell, Saining Xie  
+> CVPR 2022 — [Paper](https://arxiv.org/abs/2201.03545)
 
