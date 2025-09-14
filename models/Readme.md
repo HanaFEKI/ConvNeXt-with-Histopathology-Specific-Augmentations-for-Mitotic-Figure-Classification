@@ -1,6 +1,6 @@
 # 🔬 ConvNeXt: A Modern Convolutional Network
 
-This repository contains an implementation of **ConvNeXt**, a convolutional neural network re-designed with modern best practices and inspired by Vision Transformers (ViTs).  
+In our solution, we used **ConvNeXt**, a convolutional neural network re-designed with modern best practices and inspired by Vision Transformers (ViTs).  
 ConvNeXt keeps the efficiency and inductive biases of CNNs, while borrowing design ideas from Transformers (patchify stem, large kernels, LayerNorm, inverted bottlenecks).
 
 ---
