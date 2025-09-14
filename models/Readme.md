@@ -14,7 +14,7 @@ ConvNeXt processes it in four main stages:
 
 2. **Patchify Stem** (`Conv2d` with kernel=4, stride=4):  
    - Reduces spatial resolution: `224 → 56`  
-   - Expands channels: `3 → 96`  
+   - Expands channels: `3 → 96`  (Number of output channels here are defined by the user: number of filters in the convolution layer)
    - Output shape = `(N, 96, 56, 56)`  
 
    *Formula*:  
